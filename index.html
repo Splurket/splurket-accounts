@@ -515,15 +515,11 @@
 		        firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
 		            var data= JSON.stringify(success)
 		            //window.location.replace("./index.html")
-
-		            then((value) => {
-		                setTimeout(function(){
-		                    window.location.href="./index.html";
-		                }, 1000)
-		            });
+                    document.write("Login Successful!")
 		        }).catch((error) => {
 		            // Handle Errors here.
-		            document.write(JSON.stringify(error))
+                    document.write("Login Failed!")
+
 
 		        });
 		    }

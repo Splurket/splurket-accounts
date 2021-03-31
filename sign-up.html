@@ -541,7 +541,8 @@ function signUp(){
             if (user != null) {
                 uid = user.uid;
             }
-            window.location.replace("./index.html")
+            document.write("Signup Successful!")
+            //window.location.replace("./index.html")
             .then((value) => {
                 setTimeout(function(){
                     window.location.replace("./index.html");
@@ -549,7 +550,7 @@ function signUp(){
             });
         }).catch((error) => {
             // Handle Errors here.
-            console.log(error)
+            document.write("Signup Failed!")
         });
     }
 }
