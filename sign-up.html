@@ -435,8 +435,13 @@
                     <h1>Sign Up</h1>
                     <p class="text-muted">Please enter your Email and Password</p> 
                     <input type="text" name="" placeholder="Email" id="userEmail" onclick="this.style.color='black';"> 
-                    <input type="password" name="" placeholder="Password" id="userPassword" onclick="this.style.color='black';"> 
-                    <a class="forgot text-muted" href="#">Forgot password?</a><br><br>
+                    <div style="background-color:red;color:white;border-radius: 5px;padding:5px;" id="userEmailError" hidden="hidden">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
+                    </div>
+                    <input type="password" name="" placeholder="Password" id="userPassword" onclick="this.style.color='black';">
+                    <div style="background-color:red;color:white;border-radius: 5px;padding: 5px;" id="userPasswordError" hidden="hidden">
+                        <p>Error: Invalid Password. Please Use One Uppercase letter, One Symbol, And A Least 10 Characters In Length</p>
+                    </div><br>
                     <button class="button" name="" >Sign Up</button><br><br>
                     <a href="./index.html"><p>Already Have An Account? Login!</p></a>
                 </form>
@@ -503,11 +508,11 @@ function checkUserEmail(){
     }else{
         flag = true;
     }
-    /*if(flag){
+    if(flag){
         document.getElementById("userEmailError").style.display = "block";
     }else{
         document.getElementById("userEmailError").style.display = "none";
-    }*/
+    }
 }
 // xxxxxxxxxx Password Validation xxxxxxxxxx
 function checkUserPassword(){
@@ -519,49 +524,19 @@ function checkUserPassword(){
     }else{
         flag = true;
     }    
-    //if(flag){
-        //document.getElementById("userPasswordError").style.display = "block";
-    }//else{
-        //document.getElementById("userPasswordError").style.display = "none";
-    //}
-//}
+    if(flag){
+        document.getElementById("userPasswordError").style.display = "block";
+    }else{
+        document.getElementById("userPasswordError").style.display = "none";
+    }
+}
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 document.addEventListener('submit', (e) => {
+    checkUserEmail();
+    checkUserPassword();  
     var userEmail = document.getElementById("userEmail").value;
     var userEmail1 = btoa(userEmail)
     var userPassword = document.getElementById("userPassword").value;
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Accept", "application/json, /;q=0.5");
-
-    var raw = JSON.stringify({
-      "stringtoencrypt": `${userEmail1}`
-    });
-    //document.write(raw)
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-      .then(function (response) {
-          return response.json();
-      })
-      .then(function (data) {
-        //document.write(JSON.stringify(data.encryptedstring))
-        e.preventDefault();
-        db.collection('users').doc(data.encryptedstring).set({
-                email: userEmail,
-                discord: "",
-                pro_pic: "https://i.imgur.com/ibkGDWV.png",
-                phone_number: "",
-                username: "",
-                company: "Bitch In the trunk",
-                sexuality: "Gay as fuck"
-        });
-        });  
     var userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
     var checkUserEmailValid = userEmail.match(userEmailFormate);
@@ -577,6 +552,38 @@ document.addEventListener('submit', (e) => {
             if (user != null) {
                 uid = user.uid;
             }
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${userEmail1}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                //document.write(JSON.stringify(data.encryptedstring))
+                e.preventDefault();
+                db.collection('users').doc(data.encryptedstring).set({
+                        email: userEmail,
+                        discord: "",
+                        pro_pic: "https://i.imgur.com/ibkGDWV.png",
+                        phone_number: "",
+                        username: "",
+                        company: "Bitch In the trunk",
+                        sexuality: "Gay as fuck"
+                });
+                });
             /*db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(JSON.stringify(doc));
@@ -590,6 +597,7 @@ document.addEventListener('submit', (e) => {
             });
             console.log("Signup Successful!",btoa(btoa(userEmail)))
             //window.location.replace("./index.html")
+
         }).catch((error) => {
             // Handle Errors here.
             console.log("Signup Failed!", error)
