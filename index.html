@@ -550,8 +550,7 @@ function bunnify1(bunnytype) {
                   return response.json();
               })
               .then(function (data) {
-                var bunny1 = data;
-                document.write(bunny1)
+                var bunny1 = JSON.stringify(data);
         })
 }
 function bunnify2(bunnytype) {
@@ -575,7 +574,7 @@ function bunnify2(bunnytype) {
                   return response.json();
               })
               .then(function (data) {
-                var bunny2 = data;
+                var bunny2 = JSON.stringify(data);
         })
 }
     </script>
