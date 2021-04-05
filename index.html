@@ -477,6 +477,14 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
 <script>
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
     var redirect= getParameterByName('redirect');
     document.write(redirect)
   // Your web app's Firebase configuration
@@ -579,14 +587,6 @@
                 const bunny2 = data.encryptedstring;
                 console.log(bunny2)
         })
-}
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
     </script>
