@@ -480,8 +480,7 @@
 <script>
     var redirect1 = location.href
     console.log(redirect1)
-    var redirect2 = redirect1.replace("")
-    var redirect= redirect2[2]
+    var redirect = redirect1.replace("https://accounts.splurket.com/?redirect=","")
     var bunny1
     var bunny2
   // Your web app's Firebase configuration
@@ -567,9 +566,7 @@
                         bunny2 = data.encryptedstring;
                         //document.write(bunny2)
                 })
-                    var redirecturl1= redirect.split("=")
-                    var redirecturl = redirecturl1[2]
-                    location.href=redirecturl + '?login=' + bunny1 + bunny2
+                    location.href=redirect + '?login=' + bunny1 + bunny2
 
 		        }).catch((error) => {
 		            // Handle Errors here.
