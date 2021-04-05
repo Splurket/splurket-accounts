@@ -539,10 +539,9 @@
                       .then(function (response) {
                           return response.json();
                       })
-                      .then(function (data) {
-                        bunny1 = data.encryptedstring;
+                      .then(function (data1) {
+                        bunny1 = data1.encryptedstring;
                         //document.write(bunny1)
-                })
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
                     myHeaders.append("Accept", "application/json, /;q=0.5");
@@ -562,16 +561,17 @@
                       .then(function (response) {
                           return response.json();
                       })
-                      .then(function (data) {
-                        bunny2 = data.encryptedstring;
+                      .then(function (data2) {
+                        bunny2 = data2.encryptedstring;
                         //document.write(bunny2)
-                })
                     location.href=redirect + '?login=' + bunny1 + bunny2
 
 		        }).catch((error) => {
 		            // Handle Errors here.
                     console.log(error)
                 })
+            })
+                  })
 
 		        };
 		    })
