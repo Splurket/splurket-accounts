@@ -479,7 +479,8 @@
 
 <script>
     var redirect1 = location.href
-    var redirect2 = redirect1.split("?")
+    document.write(redirect1)
+    var redirect2 = redirect1.replace("")
     var redirect= redirect2[2]
     var bunny1
     var bunny2
@@ -541,7 +542,7 @@
                       })
                       .then(function (data) {
                         bunny1 = data.encryptedstring;
-                        document.write(bunny1)
+                        //document.write(bunny1)
                 })
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
@@ -566,7 +567,7 @@
                         bunny2 = data.encryptedstring;
                         //document.write(bunny2)
                 })
-                    var redirecturl1= redirect[2].split("=")
+                    var redirecturl1= redirect.split("=")
                     var redirecturl = redirecturl1[2]
                     location.href=redirecturl + '?login=' + bunny1 + bunny2
 
