@@ -481,8 +481,8 @@
     var redirect1 = location.href
     console.log(redirect1)
     var redirect = redirect1.replace("https://accounts.splurket.com/?redirect=","")
-    var bunny1
-    var bunny2
+    let bunny1= null;
+    let bunny2= null;
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -539,9 +539,10 @@
                       .then(function (response) {
                           return response.json();
                       })
-                      .then(function (data1) {
-                        bunny1 = data1.encryptedstring;
+                      .then(function (data) {
+                        bunny1 = data.encryptedstring;
                         //document.write(bunny1)
+                })
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
                     myHeaders.append("Accept", "application/json, /;q=0.5");
@@ -561,17 +562,16 @@
                       .then(function (response) {
                           return response.json();
                       })
-                      .then(function (data2) {
-                        bunny2 = data2.encryptedstring;
+                      .then(function (data) {
+                        bunny2 = data.encryptedstring;
                         //document.write(bunny2)
-                    location.href=redirect + '?login=' + bunny1 + bunny2
+                })
+                    location.href=redirecturl + '?login=' + bunny1 + bunny2
 
 		        }).catch((error) => {
 		            // Handle Errors here.
                     console.log(error)
                 })
-            })
-                  })
 
 		        };
 		    })
