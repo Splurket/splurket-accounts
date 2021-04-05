@@ -486,7 +486,6 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     var redirect= getParameterByName('redirect');
-    document.write(redirect)
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -526,6 +525,54 @@
                     //document.write("Login Successful!")
                     bunnify1(userSIEmail);
                     bunnify2(userSIPassword);
+                    bunny1="";
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Accept", "application/json, /;q=0.5");
+
+                    var raw = JSON.stringify({
+                      "stringtoencrypt": `${bunnytype}`
+                    });
+                    //document.write(raw)
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: raw,
+                      redirect: 'follow'
+                    };
+
+                    fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+                      .then(function (response) {
+                          return response.json();
+                      })
+                      .then(function (data) {
+                        const bunny1 = data.encryptedstring;
+                        return bunny1
+                })
+                    bunny2="";
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Accept", "application/json, /;q=0.5");
+
+                    var raw = JSON.stringify({
+                      "stringtoencrypt": `${bunnytype}`
+                    });
+                    //document.write(raw)
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: raw,
+                      redirect: 'follow'
+                    };
+
+                    fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+                      .then(function (response) {
+                          return response.json();
+                      })
+                      .then(function (data) {
+                        const bunny2 = data.encryptedstring;
+                        console.log(bunny2)
+                })
 
                     location.href=redirect + '?login=' + bunny1 + bunny2
 
@@ -536,33 +583,7 @@
 
 		        };
 		    })
-        function bunnify1(bunnytype) {
-            bunny1="";
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
 
-            var raw = JSON.stringify({
-              "stringtoencrypt": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-              .then(function (response) {
-                  return response.json();
-              })
-              .then(function (data) {
-                const bunny1 = data.encryptedstring;
-                return bunny1
-        })
-}
-        function bunnify2(bunnytype) {
             bunny2="";
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -587,7 +608,6 @@
                 const bunny2 = data.encryptedstring;
                 console.log(bunny2)
         })
-}
 
     </script>
 
