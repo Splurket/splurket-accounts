@@ -477,9 +477,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
 <script>
-    var redirect1 = location.href
-    console.log(redirect1)
-    var redirect = redirect1.replace("https://accounts.splurket.com/?redirect=","")
+    var redirect= getParameterByName('redirect');
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -580,6 +578,14 @@
                 const bunny2 = data.encryptedstring;
                 console.log(bunny2)
         })
+}
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
     </script>
