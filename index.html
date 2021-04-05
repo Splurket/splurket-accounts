@@ -481,6 +481,8 @@
     var redirect1 = location.href
     var redirect2 = redirect1.split("?")
     var redirect= redirect2[2]
+    var redirecturl1 = redirect.split("=")
+    var redirecturl = redirecturl1[2]
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -539,6 +541,7 @@
                       })
                       .then(function (data) {
                         bunny1 = data.encryptedstring;
+                        document.write(bunny1)
                 })
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
@@ -561,10 +564,10 @@
                       })
                       .then(function (data) {
                         bunny2 = data.encryptedstring;
-                        document.write(bunny2)
+                        //document.write(bunny2)
                 })
 
-                    location.href=redirect +bunny1.encryptedstring + bunny2.encryptedstring
+                    location.href=redirecturl + '?login=' + bunny1 + bunny2
 
 		        }).catch((error) => {
 		            // Handle Errors here.
