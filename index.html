@@ -518,10 +518,8 @@
 		            var data= JSON.stringify(success)
 		            //window.location.replace("./index.html")
                     //document.write("Login Successful!")
-                    bunnify(userSIEmail);
-                    var bunny1 = data1;
-                    bunnify(userSIPassword)
-                    var bunny2 = data1;
+                    bunnify1(userSIEmail);
+                    bunnify2(userSIPassword);
                     location.href=redirect +bunny1.encryptedstring + bunny2.encryptedstring
 
 		        }).catch((error) => {
