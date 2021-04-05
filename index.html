@@ -542,7 +542,7 @@
                       .then(function (data) {
                         bunny1 = data.encryptedstring;
                         //document.write(bunny1)
-                })
+                    })
                     let bunny2= null;
                     var raw = JSON.stringify({
                       "stringtoencrypt": `${userSIPassword}`
@@ -562,8 +562,8 @@
                       .then(function (data) {
                         bunny2 = data.encryptedstring;
                         //document.write(bunny2)
-                })
-                location.href=redirecturl + '?login=' + bunny1 + bunny2
+                    })
+                    location.href=redirecturl + '?login=' + bunny1 + bunny2
 
 		        }).catch((error) => {
 		            // Handle Errors here.
