@@ -523,15 +523,14 @@
 		            var data= JSON.stringify(success)
 		            //window.location.replace("./index.html")
                     //document.write("Login Successful!")
-                    bunnify1(userSIEmail);
-                    bunnify2(userSIPassword);
+
                     bunny1="";
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
                     myHeaders.append("Accept", "application/json, /;q=0.5");
 
                     var raw = JSON.stringify({
-                      "stringtoencrypt": `${bunnytype}`
+                      "stringtoencrypt": `${userSIEmail}`
                     });
                     //document.write(raw)
                     var requestOptions = {
@@ -555,7 +554,7 @@
                     myHeaders.append("Accept", "application/json, /;q=0.5");
 
                     var raw = JSON.stringify({
-                      "stringtoencrypt": `${bunnytype}`
+                      "stringtoencrypt": `${userSIPassword}`
                     });
                     //document.write(raw)
                     var requestOptions = {
