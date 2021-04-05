@@ -531,7 +531,7 @@
 
 		        };
 		    })
-function bunnify(bunnytype) {
+function bunnify1(bunnytype) {
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Accept", "application/json, /;q=0.5");
@@ -552,7 +552,31 @@ function bunnify(bunnytype) {
                   return response.json();
               })
               .then(function (data) {
-                var data1 = data;
+                var bunny1 = data;
+        })
+}
+function bunnify2(bunnytype) {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${bunnytype}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                var bunny2 = data;
         })
 }
     </script>
