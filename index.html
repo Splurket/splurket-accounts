@@ -538,7 +538,7 @@
                           return response.json();
                       })
                       .then(function (data) {
-                        var bunny1 = JSON.stringify(data);
+                        bunny1 = data;
                 })
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
@@ -560,7 +560,7 @@
                           return response.json();
                       })
                       .then(function (data) {
-                        var bunny2 = JSON.stringify(data);
+                        bunny2 = data;
                 })
 
                     location.href=redirect +bunny1.encryptedstring + bunny2.encryptedstring
@@ -572,55 +572,7 @@
 
 		        };
 		    })
-function bunnify1(bunnytype) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
 
-            var raw = JSON.stringify({
-              "stringtoencrypt": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-              .then(function (response) {
-                  return response.json();
-              })
-              .then(function (data) {
-                var bunny1 = JSON.stringify(data);
-        })
-}
-function bunnify2(bunnytype) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
-
-            var raw = JSON.stringify({
-              "stringtoencrypt": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-              .then(function (response) {
-                return response.json();
-              })
-              .then(function (data) {
-                bunny2 = JSON.stringify(data);
-                return bunny2
-        })
-}
     </script>
 
 </body>
