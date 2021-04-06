@@ -525,8 +525,6 @@
                     //document.write("Login Successful!")
                     bunnify1(userSIEmail);
                     bunnify2(userSIPassword);
-
-
 		        }).catch((error) => {
 		            // Handle Errors here.
                     console.log(error)
@@ -584,11 +582,10 @@
 }
         function definebunny1(data) {
             bunny1 = data.encryptedstring;
-            document.write(bunny1)
         }
         function definebunny2(data) {
             bunny2 = data.encryptedstring;
-            location.href=redirect + '?login=' + bunny1 + '&key='+bunny2
+            location.href=redirect + '?redirect=' redirect + '&bunnyluck=' bunny1 + '&rabbitfoot='+bunny2
         }
 
     </script>
