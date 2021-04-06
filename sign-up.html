@@ -559,6 +559,8 @@ document.addEventListener('submit', (e) => {
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Accept", "application/json, /;q=0.5");
+            //1st console log
+
             console.log(userEmail1);
             var raw = JSON.stringify({
               "stringtoencrypt": `${userEmail1}`
@@ -576,8 +578,9 @@ document.addEventListener('submit', (e) => {
                   return response.json();
               })
               .then(function (data) {
-                var email1 = data.encryptedstring;
-                console.log(email1)
+                var userEmail1 = data.encryptedstring;
+                //2nd console log
+                console.log(userEmail1)
                 //document.write(JSON.stringify(data.encryptedstring))
                 e.preventDefault();
                 var arr=[];
@@ -603,11 +606,13 @@ document.addEventListener('submit', (e) => {
             var docRef = db.collection("users").doc();
 
             docRef.get().then((doc) => {
+                //third console log
+
                     console.log("Document data:", doc.data());
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
-            console.log("Signup Successful!",userEmail1)
+            console.log("Signup Successful!", userEmail1)
             //window.location.replace("./index.html")
             bunnify(userEmail);
             var bunny1 = data1;
