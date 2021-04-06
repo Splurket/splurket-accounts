@@ -506,8 +506,10 @@
     <!-- Custom JavaScript -->
     <script>
     	document.addEventListener('submit', (e) => {
-		    var userSIEmail = document.getElementById("userSIEmail").value;
-		    var userSIPassword = document.getElementById("userSIPassword").value;
+		    var userSIEmail2 = document.getElementById("userSIEmail").value;
+            var userSIEmail = userSIEmail2.toLowerCase();
+		    var userSIPassword2 = document.getElementById("userSIPassword").value;
+            var userSIPassword = userSIPassword2.toLowerCase();
 		    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
 
