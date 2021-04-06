@@ -552,6 +552,7 @@ document.addEventListener('submit', (e) => {
     }else if(checkUserPasswordValid == null){
         return checkUserPassword();
     }else{
+        console.log(error)
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then((success) => {
             var user = firebase.auth().currentUser;
             var uid;
