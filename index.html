@@ -548,9 +548,6 @@
 		    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
 
-		    var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-		    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
-
 		    if(checkUserEmailValid == null){
 		        return checkUserSIEmail();
 		    }else if(checkUserPasswordValid == null){
