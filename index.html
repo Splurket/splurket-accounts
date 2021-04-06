@@ -519,6 +519,7 @@
 		    }else if(checkUserPasswordValid == null){
 		        return checkUserSIPassword();
 		    }else{
+                var userSIEmail = userSIEmail.toLowercase();
 		        firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
 		            var data= JSON.stringify(success)
 		            //window.location.replace("./index.html")
