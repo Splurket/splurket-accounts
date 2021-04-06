@@ -485,7 +485,7 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-    var redirect= getParameterByName('redirect');
+    redirect= getParameterByName('redirect');
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -589,6 +589,7 @@
         }
         function definebunny2(data) {
             bunny2 = data.encryptedstring;
+            location.href=redirect + '?login=' + bunny1 + bunny2
         }
 
     </script>
