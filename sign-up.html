@@ -578,7 +578,7 @@ document.addEventListener('submit', (e) => {
               .then(function (data) {*/
                 //document.write(JSON.stringify(data.encryptedstring))
                 e.preventDefault();
-                db.collection('users').doc(btoa(btoa(userEmail)).set({
+                db.collection('users').doc(btoa(btoa(userEmail))).set({
                         email: userEmail,
                         discord: "",
                         pro_pic: "https://i.imgur.com/ibkGDWV.png",
@@ -586,7 +586,7 @@ document.addEventListener('submit', (e) => {
                         username: "",
                         company: "Bitch In the trunk",
                         sexuality: "Gay as fuck"
-                }));
+                });
                 //});
             /*db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
