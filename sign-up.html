@@ -576,6 +576,8 @@ document.addEventListener('submit', (e) => {
                   return response.json();
               })
               .then(function (data) {
+                var email1 = data.encryptedstring;
+                console.log(email1)
                 //document.write(JSON.stringify(data.encryptedstring))
                 e.preventDefault();
                 db.collection('users').doc(data.encryptedstring).set({
