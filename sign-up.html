@@ -562,6 +562,7 @@ document.addEventListener('submit', (e) => {
             var raw = JSON.stringify({
               "stringtoencrypt": `${userEmail}`
             });
+            console.log(raw)
             //document.write(raw)
             var requestOptions = {
               method: 'POST',
@@ -599,7 +600,7 @@ document.addEventListener('submit', (e) => {
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
-            console.log("Signup Successful!",userEmail)
+            console.log("Signup Successful!", userEmail)
             //window.location.replace("./index.html")
             bunnify(userEmail);
             var bunny1 = data1;
