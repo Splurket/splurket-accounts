@@ -556,7 +556,7 @@ document.addEventListener('submit', (e) => {
             if (user != null) {
                 uid = user.uid;
             }
-            var myHeaders = new Headers();
+            /*var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Accept", "application/json, /;q=0.5");
 
@@ -575,10 +575,10 @@ document.addEventListener('submit', (e) => {
               .then(function (response) {
                   return response.json();
               })
-              .then(function (data) {
+              .then(function (data) {*/
                 //document.write(JSON.stringify(data.encryptedstring))
                 e.preventDefault();
-                db.collection('users').doc(data.encryptedstring).set({
+                db.collection('users').doc(btoa(btoa(userEmail)).set({
                         email: userEmail,
                         discord: "",
                         pro_pic: "https://i.imgur.com/ibkGDWV.png",
@@ -587,7 +587,7 @@ document.addEventListener('submit', (e) => {
                         company: "Bitch In the trunk",
                         sexuality: "Gay as fuck"
                 });
-                });
+                //});
             /*db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(JSON.stringify(doc));
