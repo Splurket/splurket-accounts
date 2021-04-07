@@ -581,13 +581,14 @@ document.addEventListener('submit', (e) => {
                 //document.write(JSON.stringify(data.encryptedstring))
                 e.preventDefault();
                 db.collection('users').doc(userEmail1).set({
+                        first_name: "",
+                        last_name:"",
+                        username:"",
                         email: userEmail,
                         discord: "",
                         pro_pic: "https://i.imgur.com/ibkGDWV.png",
                         phone_number: "",
-                        username: "",
-                        company: "Bitch In the trunk",
-                        sexuality: "Gay as fuck"
+                        company: "",
                 });
                 });
             /*db.collection("products").get().then((querySnapshot) => {
