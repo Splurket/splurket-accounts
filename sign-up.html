@@ -596,8 +596,15 @@ document.addEventListener('submit', (e) => {
             //location.href=redirect
         }).catch((error) => {
             // Handle Errors here.
-            String errorCode =((FirebaseAuthException).getErrorCode());
-            document.write(errorCode)
+            const errorfuck = firebase.auth.Error.message()
+            if errorfuck.includes('email') {
+                document.getElementById("userEmailError").style.display = "block";
+                document.getElementById("userEmailError").innerText = errorfuck
+            }
+            if errorfuck.includes('password'){
+                document.getElementById("userPasswordError").style.display = "block";
+                document.getElementById("userPasswordError").innerText = errorfuck
+            }
 
         });
 
