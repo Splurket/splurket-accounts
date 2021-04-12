@@ -596,7 +596,7 @@ document.addEventListener('submit', (e) => {
             //location.href=redirect
         }).catch((error) => {
             // Handle Errors here.
-            String errorCode =((FirebaseAuthException)task.getException()).getErrorCode();
+            String errorCode =((FirebaseAuthException).getException()).getErrorCode();
             document.write(errorCode)
 
         });
