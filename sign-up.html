@@ -532,7 +532,6 @@ document.addEventListener('submit', (e) => {
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
     var checkUserEmailValid = userEmail.match(userEmailFormate);
     var checkUserPasswordValid = userPassword.match(userPasswordFormate);
-    checkUserEmail();
     checkUserPassword();
      if(checkUserEmailValid == null){
         return checkUserEmail();
