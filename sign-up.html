@@ -599,11 +599,11 @@ document.addEventListener('submit', (e) => {
             FirebaseAuthException(detailMessage);
             if (FirebaseAuthException(detailMessage).includes('email')) {
                 document.getElementById("userEmailError").style.display = "block";
-                document.getElementById("userEmailError").innerText = errorfuck
+                document.getElementById("userEmailError").innerText = FirebaseAuthException(detailMessage)
             }
             if (FirebaseAuthException(detailMessage).includes('password')){
                 document.getElementById("userPasswordError").style.display = "block";
-                document.getElementById("userPasswordError").innerText = errorfuck
+                document.getElementById("userPasswordError").innerText = FirebaseAuthException(detailMessage)
             }
 
         });
