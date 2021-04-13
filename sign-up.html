@@ -508,9 +508,9 @@ function checkUserEmail(){
     var userEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var flag;
     if(userEmail.value.match(userEmailFormate)){
-        document.getElementById("userEmailError").style.display = "block";
-    }else{
         document.getElementById("userEmailError").style.display = "none";
+    }else{
+        document.getElementById("userEmailError").style.display = "block";
     }
 }
 // xxxxxxxxxx Password Validation xxxxxxxxxx
@@ -532,6 +532,7 @@ document.addEventListener('submit', (e) => {
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
     var checkUserEmailValid = userEmail.match(userEmailFormate);
     var checkUserPasswordValid = userPassword.match(userPasswordFormate);
+    checkUserEmail();
     checkUserPassword();
      if(checkUserEmailValid == null){
         return checkUserEmail();
