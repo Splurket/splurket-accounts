@@ -557,6 +557,7 @@
                     bunnify2(userSIPassword);
 		        }).catch((error) => {
                     // Handle Errors here.
+                    console.log(error)
                     if (error.message.includes('email')) {
                         document.getElementById("userSIEmailError").style.display = "block";
                         document.getElementById("userSIEmailError").innerText = error.message
