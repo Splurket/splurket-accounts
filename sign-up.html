@@ -596,12 +596,12 @@ document.addEventListener('submit', (e) => {
             //location.href=redirect
         }).catch((error) => {
             // Handle Errors here.
-            const errorfuck = FirebaseAuthException(detailMessage);
-            if detailMessage.includes('email') {
+            FirebaseAuthException(detailMessage);
+            if (FirebaseAuthException(detailMessage);.includes('email')) {
                 document.getElementById("userEmailError").style.display = "block";
                 document.getElementById("userEmailError").innerText = errorfuck
             }
-            if detailMessage.includes('password'){
+            if (FirebaseAuthException(detailMessage);.includes('password')){
                 document.getElementById("userPasswordError").style.display = "block";
                 document.getElementById("userPasswordError").innerText = errorfuck
             }
