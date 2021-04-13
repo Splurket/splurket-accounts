@@ -519,9 +519,9 @@ function checkUserPassword(){
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
     var flag;
     if(userPassword.value.match(userPasswordFormate)){
-        document.getElementById("userPasswordError").style.display = "block";
-    }else{
         document.getElementById("userPasswordError").style.display = "none";
+    }else{
+        document.getElementById("userPasswordError").style.display = "block";
     }
 }
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
