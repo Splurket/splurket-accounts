@@ -437,8 +437,14 @@
                     <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
                         <h1>Login</h1>
                         <p class="text-muted">Please enter your Email and Password</p> 
-                        <input type="text" name="" placeholder="Email" id="userSIEmail" onclick="this.style.color='black';"> 
+                        <input type="text" name="" placeholder="Email" id="userSIEmail" onclick="this.style.color='black';">
+                        <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="userSIEmailError">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
+                        </div>
                         <input type="password" name="" placeholder="Password" id="userSIPassword" onclick="this.style.color='black';"> 
+                        <div style="background-color:red;color:white;border-radius: 5px;padding: 5px; display: none;" id="userSIPasswordError">
+                        <p>Error: Invalid Password.</p>
+                        </div><br>
                         <a class="forgot text-muted" href="#">Forgot password?</a><br><br>
                         <button class="button" name="">Login</button><br><br>
                         <a href="./sign-up.html"><p>Don't Have An Account? Sign Up!</p></a>
