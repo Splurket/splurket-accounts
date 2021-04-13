@@ -597,11 +597,11 @@ document.addEventListener('submit', (e) => {
         }).catch((error) => {
             // Handle Errors here.
             const errorfuck = FirebaseAuthException(detailMessage);
-            if errorfuck.includes('email') {
+            if detailMessage.includes('email') {
                 document.getElementById("userEmailError").style.display = "block";
                 document.getElementById("userEmailError").innerText = errorfuck
             }
-            if errorfuck.includes('password'){
+            if detailMessage.includes('password'){
                 document.getElementById("userPasswordError").style.display = "block";
                 document.getElementById("userPasswordError").innerText = errorfuck
             }
