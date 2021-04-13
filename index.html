@@ -556,17 +556,15 @@
                     bunnify1(userSIEmail);
                     bunnify2(userSIPassword);
 		        }).catch((error) => {
-		            // Handle Errors here.
-                    }).catch((error) => {
-                        // Handle Errors here.
-                        if (error.message.includes('email')) {
-                            document.getElementById("userSIEmailError").style.display = "block";
-                            document.getElementById("userSIEmailError").innerText = error.message
-                        }
-                        if (error.message.includes('password')){
-                            document.getElementById("userSIPasswordError").style.display = "block";
-                            document.getElementById("userSIPasswordError").innerText = error.message
-                        }
+                    // Handle Errors here.
+                    if (error.message.includes('email')) {
+                        document.getElementById("userSIEmailError").style.display = "block";
+                        document.getElementById("userSIEmailError").innerText = error.message
+                    }
+                    if (error.message.includes('password')){
+                        document.getElementById("userSIPasswordError").style.display = "block";
+                        document.getElementById("userSIPasswordError").innerText = error.message
+                    }
                 })
 
 		        };
