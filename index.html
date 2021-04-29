@@ -492,10 +492,12 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     redirect= getParameterByName('redirect');
-    var pathArray = redirect.split( '/' );
-    var protocol = pathArray[0];
-    var host = pathArray[2];
-    var redirectbase = protocol + '//' + host;
+    if (typeof redirect != 'undefined'){
+        var pathArray = redirect.split( '/' );
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var redirectbase = protocol + '//' + host;
+    }
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -625,7 +627,11 @@
         }
         function definebunny2(data) {
             bunny2 = data.encryptedstring;
-            location.href=`${redirectbase}/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`;
+            if(typeof redirect != "undefined"){
+                location.href=`${redirectbase}/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`;
+        }else{
+            location.href=`splurket.com/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`
+        }
         }
 
     </script>
