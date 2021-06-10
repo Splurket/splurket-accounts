@@ -1,17 +1,17 @@
 <html>
     <head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    <!-- Nunito Google Font -->
-	    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
-	    <title>Splurket Login</title>
-	    <meta charset="utf-8">
-	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-	    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
-	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-	    <script type="text/javascript"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Nunito Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+        <title>Splurket Login</title>
+        <meta charset="utf-8">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"></script>
         <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
 </head>
 <style>
@@ -426,11 +426,11 @@
 }
 </style>
 <body>
-    	<div style="width:100%">
-    		<div style="width:100%;max-height:50%;margin:auto; padding-right:5%;padding-top:5%;padding-bottom: 30px;">
-    	    	<center><img src="./assets/images/splurket.png" style="width:100px;height:100px;" style="padding-right: 50px;"><br><span style="color:white; font-family: 'Shadows Into Light Two'; font-size: 50px;">Splurket</span></center>
-    	    </div>
-    	</div>
+        <div style="width:100%">
+            <div style="width:100%;max-height:50%;margin:auto; padding-right:5%;padding-top:5%;padding-bottom: 30px;">
+                <center><img src="./assets/images/splurket.png" style="width:100px;height:100px;" style="padding-right: 50px;"><br><span style="color:white; font-family: 'Shadows Into Light Two'; font-size: 50px;">Splurket</span></center>
+            </div>
+        </div>
     <div class="container" style="margin-bottom:50%;">
         <div class="row">
             <div class="col-md-6" style="width:100%;">
@@ -446,7 +446,7 @@
                         <p>Error: Invalid Password.</p>
                         </div><br>
                         <a class="forgot text-muted" href="#">Forgot password?</a><br><br>
-                        <button class="button" id="login-btn"name="loginbtn">Login</button><br><br>
+                        <button class="button" name="">Login</button><br><br>
                         <a href="./sign-up.html"><p>Don't Have An Account? Sign Up!</p></a>
                     </form>
                 </div>
@@ -538,28 +538,28 @@
                 document.getElementById("userSIPasswordError").style.display = "block";
             }
         }
-    	document.getElementById("login-btn").addEventListener("click", function() {
-		    var userSIEmail = document.getElementById("userSIEmail").value;
-		    var userSIPassword = document.getElementById("userSIPassword").value;
-		    var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		    var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
+        document.addEventListener('submit', (e) => {
+            var userSIEmail = document.getElementById("userSIEmail").value;
+            var userSIPassword = document.getElementById("userSIPassword").value;
+            var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
 
-		    var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-		    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
+            var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
+            var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
 
-		    if(checkUserEmailValid == null){
-		        return checkUserSIEmail();
-		    }else if(checkUserPasswordValid == null){
-		        return checkUserSIPassword();
-		    }else{
+            if(checkUserEmailValid == null){
+                return checkUserSIEmail();
+            }else if(checkUserPasswordValid == null){
+                return checkUserSIPassword();
+            }else{
                 var userSIEmail = userSIEmail.toLowerCase();
-		        firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
-		            var data= JSON.stringify(success)
-		            //window.location.replace("./index.html")
+                firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
+                    var data= JSON.stringify(success)
+                    //window.location.replace("./index.html")
                     //document.write("Login Successful!")
                     bunnify1(userSIEmail);
                     bunnify2(userSIPassword);
-		        }).catch((error) => {
+                }).catch((error) => {
                     // Handle Errors here.
                     console.log(error)
                     if (error.message.includes('email')) {
@@ -572,8 +572,8 @@
                     }
                 })
 
-		        };
-		    })
+                };
+            })
         function bunnify1(bunnytype) {
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -633,6 +633,7 @@
             location.href=`splurket.com/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`
         }
         }
+
     </script>
 
 </body>
