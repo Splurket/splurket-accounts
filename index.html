@@ -13,10 +13,6 @@
 	    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 	    <script type="text/javascript"></script>
         <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
-          <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 </head>
 <style>
     body {
@@ -457,13 +453,14 @@
             </div>
         </div>
 </div>
-<
 <div>
     <div class="db-RegisterAndLoginBackground-secondLeftStripe" style="transform: skewY(-20deg);opacity: 0.4;"></div>
     <div class="db-RegisterAndLoginBackground-firstRightStripe" style="transform: skewY(-20deg);opacity: 0.4;"></div>
 
             
-
+                     
+</body>
+</html>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -474,21 +471,17 @@
     <!-- Firebase -->
     
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-<script>
-     var config = {
-            apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
-            authDomain: "splurket-66df1.firebaseapp.com",
-            databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
-            projectId: "splurket-66df1",
-            storageBucket: "splurket-66df1.appspot.com",
-            messagingSenderId: "286706779903",
-            appId: "1:286706779903:web:fd91c29319f9804e192eca",
-            measurementId: "G-QWQ2M658KL"
-          };
-        firebase.initializeApp(config);
-        const db = firebase.firestore();
-        db.settings({ timestampsInSnapshots: true });
-</script>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
 <script>
     function getParameterByName(name, url = window.location.href) {
         name = name.replace(/[\[\]]/g, '\\$&');
@@ -505,6 +498,21 @@
         var host = pathArray[2];
         var redirectbase = protocol + '//' + host;
     }
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
+    authDomain: "splurket-66df1.firebaseapp.com",
+    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
+    projectId: "splurket-66df1",
+    storageBucket: "splurket-66df1.appspot.com",
+    messagingSenderId: "286706779903",
+    appId: "1:286706779903:web:fd91c29319f9804e192eca",
+    measurementId: "G-QWQ2M658KL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
 
     <!-- Custom JavaScript -->
