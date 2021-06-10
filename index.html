@@ -13,6 +13,10 @@
 	    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 	    <script type="text/javascript"></script>
         <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+          <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 </head>
 <style>
     body {
@@ -462,6 +466,7 @@
 </body>
 </html>
 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -481,7 +486,21 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
-
+<script>
+     var config = {
+            apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
+            authDomain: "splurket-66df1.firebaseapp.com",
+            databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
+            projectId: "splurket-66df1",
+            storageBucket: "splurket-66df1.appspot.com",
+            messagingSenderId: "286706779903",
+            appId: "1:286706779903:web:fd91c29319f9804e192eca",
+            measurementId: "G-QWQ2M658KL"
+          };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+</script>
 <script>
     function getParameterByName(name, url = window.location.href) {
         name = name.replace(/[\[\]]/g, '\\$&');
@@ -498,21 +517,6 @@
         var host = pathArray[2];
         var redirectbase = protocol + '//' + host;
     }
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
-    authDomain: "splurket-66df1.firebaseapp.com",
-    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
-    projectId: "splurket-66df1",
-    storageBucket: "splurket-66df1.appspot.com",
-    messagingSenderId: "286706779903",
-    appId: "1:286706779903:web:fd91c29319f9804e192eca",
-    measurementId: "G-QWQ2M658KL"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 </script>
 
     <!-- Custom JavaScript -->
@@ -633,7 +637,6 @@
             location.href=`splurket.com/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`
         }
         }
-
     </script>
 
 </body>
