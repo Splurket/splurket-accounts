@@ -504,6 +504,7 @@
     
     <!-- Custom JavaScript -->
     <script>
+
         // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
@@ -583,6 +584,13 @@ document.addEventListener('submit', (e) => {
                         pro_pic: "https://i.imgur.com/ibkGDWV.png",
                         phone_number: "",
                         company: "",
+                });
+                db.collection('pubusers').doc(userName).set({
+                    Skills:"",
+                    Education:"",
+                    username userName,
+                    tagline:"",
+                    image:'https://i.imgur.com/ibkGDWV.png',
                 });
                 });
             /*db.collection("products").get().then((querySnapshot) => {
