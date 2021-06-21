@@ -447,7 +447,7 @@
                         </div><br>
                         <a class="forgot text-muted" href="#">Forgot password?</a><br><br>
                         <button class="button" name="">Login</button><br><br>
-                        <a href="./sign-up.html"><p>Don't Have An Account? Sign Up!</p></a>
+                        <a href="" id="login-link"><p>Don't Have An Account? Sign Up!</p></a>
                     </form>
                 </div>
             </div>
@@ -492,6 +492,7 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     redirect= getParameterByName('redirect');
+    document.getElementById('login-link').href = './sign-up.html?redirect='+ redirect
     if (typeof redirect != 'undefined'){
         var pathArray = redirect.split( '/' );
         var protocol = pathArray[0];
