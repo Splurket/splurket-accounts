@@ -604,15 +604,8 @@ document.addEventListener('submit', (e) => {
             querySnapshot.forEach((doc) => {
                 console.log(JSON.stringify(doc));
             });*/
-            var docRef = db.collection("users").doc();
-
-            docRef.get().then((doc) => {
-                    console.log("Document data:", doc.data());
-            }).catch((error) => {
-                console.log("Error getting document:", error);
-            });
             console.log("Signup Successful!", userEmail1)
-            Window.location.href = "./signup-Success"
+            Window.location.href = "./signup-success"
             //window.location.replace("./index.html")
             //location.href=redirect
         }).catch((error) => {
