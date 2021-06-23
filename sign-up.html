@@ -604,8 +604,6 @@ document.addEventListener('submit', (e) => {
             querySnapshot.forEach((doc) => {
                 console.log(JSON.stringify(doc));
             });*/
-            console.log("Signup Successful!", userEmail1)
-            Window.location.href = "./signup-success"
             //window.location.replace("./index.html")
             //location.href=redirect
         }).catch((error) => {
@@ -620,6 +618,8 @@ document.addEventListener('submit', (e) => {
             }
 
         });
+        console.log("Signup Successful!", userEmail1)
+        Window.location.href = "./signup-success"
 
     }
 });
