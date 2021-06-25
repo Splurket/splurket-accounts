@@ -511,7 +511,7 @@
     
     <!-- Custom JavaScript -->
     <script>
-
+var confirmation;
         // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
@@ -558,6 +558,7 @@ document.addEventListener('submit', (e) => {
             if (user != null) {
                 uid = user.uid;
             }
+            confirmation = "Success"
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Accept", "application/json, /;q=0.5");
@@ -618,8 +619,10 @@ document.addEventListener('submit', (e) => {
             }
 
         });
+        if (confirmation == "Success"){
         console.log("Signup Successful!")
         window.location.href = "./signup-success?redirect="+redirect
+    }
 
     }
 });
