@@ -600,6 +600,8 @@ document.addEventListener('submit', (e) => {
                     tagline:"",
                     image:'https://i.imgur.com/ibkGDWV.png',
                 });
+                console.log("Signup Successful!")
+                window.location.href = "./signup-success?redirect="+redirect
                 });
             /*db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -619,10 +621,6 @@ document.addEventListener('submit', (e) => {
             }
 
         });
-        if (confirmation == "Success"){
-        console.log("Signup Successful!")
-        window.location.href = "./signup-success?redirect="+redirect
-    }
 
     }
 });
