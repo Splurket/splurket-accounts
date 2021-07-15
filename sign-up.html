@@ -585,7 +585,7 @@ document.addEventListener('submit', (e) => {
               redirect: 'follow'
             };
 
-            fetch("https://script.google.com/macros/s/AKfycbyvKMZl_AIg2NddX6QmV_Lw6YwuLfkuZ1j-kieE-3cE-ko10c1oAPFEZVW1VzBtkwi6CA/exec", requestOptions)
+            fetch("https://script.google.com/macros/s/AKfycbztmPppAUAFZ5mRptFgilSBYhRf7_3-GYspQwiQC4chyd4qxgfKNtaR4LSYf__5AgMEvA/exec", requestOptions)
               .then(response => response.text())
               .then(result => console.log(result))
               .catch(error => console.log('error', error));
@@ -611,6 +611,7 @@ document.addEventListener('submit', (e) => {
                 console.log("Signup Successful!")
                 window.location.href = "./signup-success?redirect="+redirect
                 });*/
+                
             /*db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(JSON.stringify(doc));
