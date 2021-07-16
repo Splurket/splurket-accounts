@@ -566,8 +566,8 @@ document.addEventListener('submit', (e) => {
                 "userdata":{
                     "first_name": "",
                     "last_name": "",
-                    "username": "ghfdsj",
-                    "email": "wsdxiksjn@gmail.com",
+                    "username": userName,
+                    "email": userEmail,
                     "discord": "",
                     "pro_pic": "https://i.imgur.com/ibkGDWV.png",
                     "phone_number": ""
@@ -576,7 +576,7 @@ document.addEventListener('submit', (e) => {
                     "company": "",
                     "Skills": "",
                     "Education": "",
-                    "username": "ghfdsj",
+                    "username": userName,
                     "tagline": "",
                     "image": "https://i.imgur.com/ibkGDWV.png"
                     }
@@ -591,7 +591,7 @@ document.addEventListener('submit', (e) => {
               redirect: 'follow'
             };
 
-            fetch("https://script.google.com/macros/s/AKfycbzm_ETT7lvoJcJGXymsQLkPr21-TgCEoIP7WsYEmHsnnYRMPHI9ku1wX7oQmoclpGegWA/exec", requestOptions)
+            fetch("https://script.google.com/macros/s/AKfycby8VQQqxip7vVyDlcoEpZewOHxgGQnSI6DuTp2KNGCDbe7CgBoJSUgcZbZ1X0_ABJON/exec", requestOptions)
               .then(response => response.text())
               .then(result => console.log(result))
               .catch(error => console.log('error', error));
