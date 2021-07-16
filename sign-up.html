@@ -561,7 +561,7 @@ document.addEventListener('submit', (e) => {
             confirmation = "Success"
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "text/plain");
-            var raw1 =
+            var raw =
             {
                 "userdata":{
                     "first_name": "",
@@ -581,7 +581,6 @@ document.addEventListener('submit', (e) => {
                     "image": "https://i.imgur.com/ibkGDWV.png"
                     }
                 }
-            var raw = JSON.stringify(raw1);
             console.log(raw)
 
             var requestOptions = {
