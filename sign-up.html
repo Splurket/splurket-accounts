@@ -563,24 +563,24 @@ document.addEventListener('submit', (e) => {
             myHeaders.append("Content-Type", "text/plain");
             var raw1 =
             {
-                "userdata":{
-                    "first_name": "",
-                    "last_name": "",
-                    "username": userName,
-                    "email": userEmail,
-                    "discord": "",
-                    "pro_pic": "https://i.imgur.com/ibkGDWV.png",
-                    "phone_number": ""
-                },
-                "publicdata" :{
-                    "company": "",
-                    "Skills": "",
-                    "Education": "",
-                    "username": userName,
-                    "tagline": "",
-                    "image": "https://i.imgur.com/ibkGDWV.png"
-                    }
+            "userdata":{
+                "first_name": "",
+                "last_name": "",
+                "username": userName,
+                "email": userEmail,
+                "discord": "",
+                "pro_pic": "https://i.imgur.com/ibkGDWV.png",
+                "phone_number": ""
+            },
+            "publicdata" :{
+                "company": "",
+                "Skills": "",
+                "Education": "",
+                "username": userName,
+                "tagline": "",
+                "image": "https://i.imgur.com/ibkGDWV.png"
                 }
+            }
             var raw = JSON.stringify(raw1);
             console.log(raw)
 
