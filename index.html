@@ -577,8 +577,7 @@
             })
         function bunnify1(bunnytype) {
             var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
+            myHeaders.append("Content-Type", "text/plain");
 
             var raw = JSON.stringify({
               "flemishGiant": `${bunnytype}`
@@ -601,8 +600,7 @@
 }
         function bunnify2(bunnytype) {
             var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
+            myHeaders.append("Content-Type", "text/plain");
 
             var raw = JSON.stringify({
               "flemishGiant": `${bunnytype}`
