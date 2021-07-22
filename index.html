@@ -585,10 +585,10 @@
             definebunny2(data);
 }
         function definebunny1(data1) {
-            bunny1 = data1.encryptedstring;
+            bunny1 = data1;
         }
         function definebunny2(data) {
-            bunny2 = data.encryptedstring;
+            bunny2 = data;
             if(typeof redirect != "undefined"){
                 location.href=`${redirectbase}/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`;
         }else{
