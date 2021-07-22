@@ -576,50 +576,13 @@
                 };
             })
         function bunnify1(bunnytype) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "text/plain");
-
-            var raw = JSON.stringify({
-              "flemishGiant": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://script.google.com/macros/s/AKfycbwd3VKlX6ajjUYSkrg9YOEu3fDg-F0PJsRvv8ia0bhPX6OHn_Lk1a4N7dVx3nKEacui/exec", requestOptions)
-              .then(function (response) {
-                  return response.json();
-              })
-              .then(function (data1) {
+            data1 = btoa(bunnytype)
+            
                 definebunny1(data1);
-        })
 }
         function bunnify2(bunnytype) {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "text/plain");
-
-            var raw = JSON.stringify({
-              "flemishGiant": `${bunnytype}`
-            });
-            //document.write(raw)
-            var requestOptions = {
-              method: 'POST',
-              headers: myHeaders,
-              body: raw,
-              redirect: 'follow'
-            };
-
-            fetch("https://script.google.com/macros/s/AKfycbwd3VKlX6ajjUYSkrg9YOEu3fDg-F0PJsRvv8ia0bhPX6OHn_Lk1a4N7dVx3nKEacui/exec", requestOptions)
-              .then(function (response) {
-                  return response.json();
-              })
-              .then(function (data) {
-                definebunny2(data);
-        })
+            data = btoa(bunnytype)
+            definebunny2(data);
 }
         function definebunny1(data1) {
             bunny1 = data1.encryptedstring;
