@@ -435,7 +435,7 @@
                 <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
                     <center><h1>Sign Up Was Successful!</span></h1><br>
 
-                    <a href="" id="login-link" onclick="click()"><p>Proceed To Login!</p></a>
+                    <a href="" id="login-link" onclick="redirect= getParameterByName('redirect');window.location.href = './index.html?redirect=' +redirect"><p onclick="click()">Proceed To Login!</p></a>
                 </form>
             </div>
         </div>
@@ -457,6 +457,7 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     redirect= getParameterByName('redirect');
+
     function click(){
     window.location.href = "./index.html?redirect=" +redirect
 }
