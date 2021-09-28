@@ -448,6 +448,7 @@
 </body>
 </html>
 <script>
+    var redirect
     function getParameterByName(name, url = window.location.href) {
         name = name.replace(/[\[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -462,3 +463,4 @@ function click1(){
     console.log('pussy')
     window.location.href = "./index.html?redirect=" +redirect
 }
+</script>
