@@ -432,11 +432,11 @@
 <div class="container" style="margin-bottom:50%;" id="form">
     <div class="row">
         <div class="col-md-6" style="width:100%">
-                <div class="box" style="margin-bottom:50%">
+                <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
                     <center><h1>Sign Up Was Successful!</span></h1><br>
 
-                    <a id="login-link" onclick="click1()">Proceed To Login!</a>
-                </div>
+                    <a href="" id="login-link"><p>Proceed To Login!</p></a>
+                </form>
             </div>
         </div>
     </div>
@@ -448,7 +448,6 @@
 </body>
 </html>
 <script>
-    var redirect
     function getParameterByName(name, url = window.location.href) {
         name = name.replace(/[\[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -458,9 +457,5 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     redirect= getParameterByName('redirect');
-
-function click1(){
-    console.log('pussy')
-    window.location.href = "./index.html?redirect=" +redirect
-}
+    document.getElementById("login-link").href = "./index.html?redirect=" +redirect
 </script>
