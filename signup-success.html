@@ -457,4 +457,6 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     redirect= getParameterByName('redirect');
-    document.getElementById("login-link").href = "./index.html?redirect=" +redirect
+    function click(){
+    window.location.href = "./index.html?redirect=" +redirect
+}
